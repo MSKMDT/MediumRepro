@@ -1,2 +1,15 @@
-<h1>Profiles#new</h1>
-<p>Find me in app/views/profiles/new.html.erb</p>
+<h1>New Profile Account</h1>
+
+<%= form_for :profiles, url: profiles_path do |f| %>
+	<p>
+		<%= f.label :username %>
+		<%= f.text_field :username %>
+	</p>
+	<p>
+		<%= f.label :picture %>
+		<%= f.file_field :picture%>
+	</p>
+	<p>
+		<%= f.submit "Let's go!", :class => 'btn btn-primary' %>
+	</p>
+<% end %>

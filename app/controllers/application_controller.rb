@@ -6,6 +6,16 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :check_profile_exists
+  skip_before_action :check_profile_exists, if: :devise_controller?
+
+  def after_sign_in_path_for resource
+     logger.debug "hello world, before if"
+     if !current_user.profile
+        new_profile_path
+     else
+         profile_path current_user.profile.id
+     end
+  end
 
   protected
 
