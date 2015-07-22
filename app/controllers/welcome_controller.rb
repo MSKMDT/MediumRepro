@@ -3,7 +3,8 @@ class WelcomeController < ApplicationController
   skip_before_action :check_profile_exists, :only => [:index]
   
   def index
-  end
+		@posts = Post.all.limit(5).order("created_at DESC")
+	end
 
   def secret
   end
