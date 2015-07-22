@@ -1,10 +1,33 @@
 Rails.application.routes.draw do
+  resources :posts
+
+  resources :profiles
+  
+  # get 'posts/new'
+
+  # get 'posts/create'
+
+  # get 'posts/show'
+
+  # get 'profiles/new'
+
+  # get 'profiles/create'
+
+  # get 'profiles/show'
+
+  # get 'profiles/edit'
+
+  # get 'welcome/index'
+
+  # get 'welcome/secret'
+
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'welcome#index'
+  get '/secret' => 'welcome#secret'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
