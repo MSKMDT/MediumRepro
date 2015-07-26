@@ -1,0 +1,13 @@
+.navbar.navbar-default {
+	background-color: #FFD00D;
+}
+.logo {
+	color: black;
+	font-size: 45px;
+	font-family: Clarendon;
+	font-weight: 700;
+}
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "redactor-rails.css"

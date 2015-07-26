@@ -1,17 +1,25 @@
-<div id="page_wrapper">
-	<h1>New Story</h1>
-
-	<%= form_for :post, url: post_path do |f| %>
-		<p>
-			<%= f.label :title %><br>
-			<%= f.text_field :title %>
-		</p>
-		<p>
-			<%= f.label :content %><br>
-			<%= f.text_area :content %>
-		</p>
-		<p>
-			<%= f.submit %>
-		</p>
-	<% end %>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+	<div id="post_wrapper">
+		<h1>New Story</h1>
+		<%= form_for(@post, :url => @url) do |f| %>
+			<p>
+				<%= f.label :title %><br>
+				<%= f.text_field :title, :class => 'user-input', :placeholder => 'Title' %>
+			</p>
+			<p>
+				<%= f.label :content %><br>
+				<%= f.text_area :content, :class => "redactor", :rows => 40, :cols => 120, :placeholder => 'Content', html_safe %>
+			</p>
+			<p>
+				<%= f.file_field :image %>
+			</p>
+			<p>
+				<%= f.submit "Post it!", :class => 'btn-submit btn' %>
+			</p>
+		<% end %>
+	</div>
+  </div>
 </div>
+
+<%#= text_area_tag :editor, "", :class => "redactor", :rows => 40, :cols => 120 %>
