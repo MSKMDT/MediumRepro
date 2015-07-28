@@ -2,7 +2,7 @@
   <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
 	<div id="post_content">
 		<p>
-		    <a href="<%= @post.profile.user_id %>"><img src="<%= @post.profile.picture(:thumb) %>)", class="post-creator"></a>
+		    <a href="/profiles/<%= @post.profile.id %>"><img src="<%= @post.profile.picture(:thumb) %>)", class="post-creator"></a>
 		    <strong><%= link_to @post.profile.username, @post.profile %></strong>
 		    <span style="float: right; font-size: 8pt;">Submitted <%= time_ago_in_words(@post.created_at) %> Ago</span>
 		</p>
@@ -15,7 +15,7 @@
         </div>
 		
 		<p class="content">
-		    <a href='<%= @post.profile.user_id %>'<img src="<%= @post.profile.picture(:thumb) %>)", class="post-creator"></a>
+		    <a href="/profiles/<%= @post.profile.id %>"><img src="<%= @post.profile.picture(:thumb) %>)", class="post-creator"></a>
 		    <strong><%= link_to @post.profile.username, @post.profile %></strong>
 		    <%= @post.content.html_safe %>
 		</p>

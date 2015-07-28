@@ -7,7 +7,9 @@
 	font-family: Clarendon;
 	font-weight: 700;
 }
-
+.avatar {
+	border-radius: 100%;
+}
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "redactor-rails.css"
