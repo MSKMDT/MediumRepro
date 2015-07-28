@@ -2,7 +2,13 @@
 <div class="main-container">
   <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
 	<div id="featured_posts">
-		
+		<% @posts.each do |post| %>
+			<div class="post_wrapper">
+			  <h2 class="title"><%= link_to post.title, post %></h2>
+			  <p class="date"><%= post.created_at.strftime("%B, %d, %Y") %></p>
+			  <img class="post_image_w" src="<%= post.image(:medium) %>">
+			</div>
+		<% end %>
 	</div>
   </div>
 </div>

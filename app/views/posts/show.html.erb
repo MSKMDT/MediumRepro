@@ -9,10 +9,8 @@
 		<h1 class="title">
 			<%= @post.title %>
 		</h1>
-
-		<div class="post_image">
-           <img src="<%= @post.image(:medium) %>">
-        </div>
+           
+        <img src="<%= @post.image(:medium) %>">
 		
 		<p class="content">
 		    <a href="/profiles/<%= @post.profile.id %>"><img src="<%= @post.profile.picture(:thumb) %>)", class="post-creator"></a>

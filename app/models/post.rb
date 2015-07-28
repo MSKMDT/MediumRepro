@@ -4,7 +4,7 @@ class Post < ActiveRecord::Base
 
 	validates :title, :content, :presence => true
 	validates :title, uniqueness: true, length: {minimum: 10}
-	validates :content, uniqueness: true, length: {minimum: 1000}
+	validates :content, uniqueness: true, length: {minimum: 10}
 	before_save
 
 	has_attached_file :image, :styles => { :medium => "800x800>"}
